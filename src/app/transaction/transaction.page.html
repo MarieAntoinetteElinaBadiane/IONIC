@@ -1,0 +1,88 @@
+<ion-header>
+
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>Transaction</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <section class="signup">
+
+        <div class="container">
+            <div class="signup-content">
+            <form method="POST" #f="ngForm" >
+                  <div class="alert alert-primary" role="alert">
+                          {{ argent }}
+                        </div>
+              <div >
+                 <fieldset id="infoEnvoi">
+                <h2 class="form-title">Envoi Argent</h2>
+               
+                <div class="form-group">
+                    <input [(ngModel)]="envoiData.montantenvoi" name="montantenvoi" id="name" type="number" class="form-input"   placeholder="Le montant du transfert" />
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="envoiData.nomenvoi" name="nomenvoi" type="text" class="form-input"   placeholder="Nom du client" />
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="envoiData.prenomenvoi" type="text" name="prenomenvoi" class="form-input"  placeholder="Prenom du client" />
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="envoiData.nomretrai" type="text" name="nomretrai" class="form-input"   placeholder="Le nom du recepteur"/>
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="envoiData.prenomretrai" type="text" name="prenomretrai" class="form-input"  placeholder="Le prénom du receveur" />
+                </div>
+                <div class="form-group">
+                     <input [(ngModel)]="envoiData.CNIenvoi" type="number" name="CNIenvoi" class="form-input"  placeholder="La piece d'identite du client" />
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="envoiData.telephoneenvoi" type="number" name="telephoneenvoi" class="form-input"  placeholder="Le numero de telephone du client " />
+                </div>
+               <div class="form-group">
+                <input [(ngModel)]="envoiData.telephoneretrai" type="number" name="telephoneretrai" class="form-input"  placeholder="Le numero de telephone du recepteur " />
+               </div>
+            <div>
+               <button (click)="envoi()" class="form-submit"  id="submit" type="submit" name="submit">Envoyer</button>
+            </div>
+
+            </fieldset>
+           </div>
+
+                <br>
+             <div>
+                    
+               <input type="radio" name="opt_rad" id="Envoi" value="Envoi" (click)="showHideEnvoi()">
+                    <label for="Envoi" >ENVOI</label>
+               <input type="radio" name="opt_rad" id="Retrait" value="oui" (click)="showHideRetrait()">
+                <label for="Retrait" >RETRAIT</label>
+             </div>
+                <br><br>
+                <div>
+                <fieldset id="infoRetrait">
+                <h2 class="form-title">Retrait Argent</h2>
+             
+                 <div class="form-group">
+                    <input [(ngModel)]="retraitData.codeenvoi" name="codeenvoi" id="name" type="number" class="form-input"   placeholder="Entrez le code transfert" class="form-group col-md-8"/>
+               </div>
+               <div class="form-group">
+                <input [(ngModel)]="retraitData.statut" name="statut" id="name" type="text" class="form-input"   placeholder="Entrez le statut" class="form-group col-md-8"/>
+               </div>
+               <div class="form-group">
+                <input [(ngModel)]="retraitData.CNIretrai" name="CNIretrai" id="name" type="number" class="form-input"   placeholder="Entrez le cni" class="form-group col-md-8"/>
+              </div>
+            <div>
+           <button (click)="retrait()" (click)="topend()" class="form-submit"  id="submit" type="submit" name="submit">Retirer</button>
+            </div>
+          </fieldset>
+           </div>
+            </form>
+         
+        </div>
+    </div>
+</section>
+</ion-content>
+  
+          

@@ -13,7 +13,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class HomePage implements OnInit {
   loginUserData = {};
   helper = new JwtHelperService();
-
+  rol = {};
 
   constructor(private auth: AuthService,
               private router: Router) {}
@@ -36,18 +36,19 @@ export class HomePage implements OnInit {
        localStorage.setItem('roles', decodedToken.roles);
        localStorage.setItem('expiration', decodedToken.exp);
        console.log(localStorage);
-       this.rol(decodedToken.roles[0]);
-       this.router.navigate(['/home']);
+      // this.rol(decodedToken.roles[0]);
+       
 }
+this.router.navigateByUrl('transaction');
    },
    err => {
     console.log(err);
     }
      );
    }
-   rol(arg0: any) {
-    throw new Error('Method not implemented.');
-  }
+  //  rol(arg0: any) {
+  //   throw new Error('Method not implemented.');
+  // }
 
 }
 

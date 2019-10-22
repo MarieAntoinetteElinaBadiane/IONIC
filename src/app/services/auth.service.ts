@@ -18,8 +18,10 @@ export class AuthService {
     }
     getToken() {
       return localStorage.getItem('token');
+
     }
     rol() {
       return localStorage.getItem('roles');
     }
+
 }
